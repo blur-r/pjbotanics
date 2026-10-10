@@ -9,8 +9,9 @@ import Hero from './component/Hero'
 import Footer from './component/Footer'
 import { useRef, useEffect, useState } from 'react'
 import BackToCategoriesBTN from './component/BackToCategoriesBTN'
-import Cateogries2 from './component/Categories2'
+// import Cateogries2 from './component/Categories2'
 // import Categories3 from './component/Categories3'
+import BrandInfo from './component/BrandInfo'
 
 function App() {
   const { activePanel, setActivePanel } = useAppContext()
@@ -44,7 +45,11 @@ function App() {
       }} /> */}
       <Hero scrollToCategories={() => {
         categoriesRef.current.scrollIntoView({ behavior: "smooth" });
-      }} />
+      }}
+        scrollToContact={() => {
+          contactRef.current.scrollIntoView({ behavior: "smooth" });
+        }}
+      />
 
 
       {activePanel && (
@@ -76,9 +81,11 @@ function App() {
 
       {/* <Categories ref={categoriesRef} /> */}
 
-      <Cateogries2 ref={categoriesRef} />
+      {/* <Cateogries2 ref={categoriesRef} /> */}
 
       {/* <Categories3 /> */}
+
+      <BrandInfo />
 
       <ProductListing ref={productListingRef} />
 

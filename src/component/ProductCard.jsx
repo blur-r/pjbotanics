@@ -26,28 +26,28 @@ function ProductCard({ product }) {
 
     return (
         <>
-            {/* <div className=' w-full md:max-w-70 p-5'> */}
-            <div className='p-5 flex flex-col h-full'>
+
+            <div className='p-5 flex flex-col h-full  border-2 border-[#41441B]/40  rounded-xl shadow-lg'>
                 <div className='relative'>
                     <img src={product.image} alt="" className="w-full h-60 md:h-48 object-cover md:object-cover  rounded-sm " />
 
-                    <button className="cursor-pointer absolute top-1 right-1 bg-white rounded-full w-9 md:h-6 md:w-6 h-9 flex justify-center items-center hover:scale-110 transition-transform duration-200" onClick={handleWishlist}>
-                        <i className={`fas fa-heart text-center text-xl md:text-sm  ${isWishlist ? "text-red-500" : "text-gray-400"}`}></i>
+                    <button className="cursor-pointer absolute top-1 right-1 bg-[#313F1E] rounded-full w-9 md:h-6 md:w-6 h-9 flex justify-center items-center hover:scale-110 transition-transform duration-200" onClick={handleWishlist}>
+                        <i className={`fas fa-heart text-center text-xl md:text-sm  ${isWishlist ? "text-red-500" : "text-[#B5AF37]"}`}></i>
                     </button>
 
                     <button
-                        className="cursor-pointer absolute top-1 left-1 bg-white rounded-full w-9 h-9 md:w-6 md:h-6 flex justify-center items-center hover:scale-110 transition-transform duration-200"
+                        className="cursor-pointer absolute top-1 left-1 bg-[#313F1E] rounded-full w-9 h-9 md:w-6 md:h-6 flex justify-center items-center hover:scale-110 transition-transform duration-200"
                         onClick={() => setShowModal(true)}
                     >
-                        <i className="fas fa-expand text-gray-600 text-lg md:text-sm"></i>
+                        <i className="fas fa-expand text-[#B5AF37] text-lg md:text-sm"></i>
                     </button>
                 </div >
 
                 <div className='mt-2 flex flex-col gap-2'>
-                    <p className='text-md font-semibold'>{product.name}</p>
+                    <p className='text-md font-semibold text-[#ede4cc]'>{product.name}</p>
                     {product.desc && <p className='text-sm text-gray-600'>{product.desc}</p>}
-                    <p className='text-2xl text-[#FBC322] font-bold'>₦{product.price}</p>
-                    <button className='bg-[#F2F2F2] cursor-pointer py-2 px-3 rounded-sm font-semibold flex gap-2 items-center justify-center mt-2' onClick={handleCart}>
+                    <p className='text-2xl text-[#B5AF37] font-bold'>₦{product.price}</p>
+                    <button className='bg-[#ede4cc] cursor-pointer py-2 px-3 rounded-sm font-semibold flex gap-2 items-center justify-center mt-2' onClick={handleCart}>
                         <i className="fas fa-shopping-cart"></i>
                         {isCart ? "remove from cart" : "add to cart"}
                     </button>
